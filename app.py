@@ -19,7 +19,7 @@ if st.session_state.final:
     st.stop()
 
 # Configurazione della pagina
-st.set_page_config(page_title="Scopri che tipo di collega sei", page_icon="💼", layout="centered")
+st.set_page_config(page_title="Scopri che tipo di informatore sei", page_icon="💼", layout="centered")
 
 # Stile CSS personalizzato
 st.markdown("""
@@ -67,94 +67,95 @@ if not st.session_state.intro_seen:
     def start_test():
         st.session_state.intro_seen = True
 
-    st.title("💼💊 Scopri che tipo di collega sei!")
+    st.title("💼💊 Scopri che tipo di informatore sei!")
     st.markdown("""
-        **Benvenuto al test di valutazione professionale**
+        **Benvenuto al test di valutazione attitudinale**
 
-        In questa applicazione verrai sottoposto a un approfondito questionario volto a valutare le tue competenze relazionali e il tuo approccio nell'ambiente medico.
+        In questo questionario, studiato appositamente per il mondo degli informatori medici, potrai scoprire il tuo stile comunicativo e il modo in cui interagisci con i colleghi.  
+        Il test è pensato per evidenziare le tue competenze relazionali e il tuo approccio strategico, confrontandoti con situazioni reali del settore.
         
         **Come funziona?**
-        - Risponderai a una serie di domande studiata per analizzare il tuo stile comunicativo e la tua attitudine collaborativa.
-        - Al termine del questionario, riceverai una diagnosi personalizzata, elaborata in modo rigoroso sulla base delle tue risposte.
-
-        Sei pronto ad affrontare una valutazione seria e accurata?
+        - Risponderai a una serie di domande che simulano scenari tipici del lavoro di informatore.
+        - Ogni risposta contribuirà a definire il tuo profilo professionale e il modo in cui ti distingui rispetto agli altri.
+        - Al termine, riceverai un’analisi personalizzata, basata sulle tue risposte, che ti aiuterà a comprendere meglio le tue attitudini e le aree di miglioramento.
+        
+        Sei pronto a scoprire il tuo vero profilo e a confrontarti con i tuoi colleghi?
     """)
     st.button("Inizia il test", on_click=start_test)
     st.stop()
 
-# Dati del quiz (con alcune domande aggiuntive)
+# Dati del quiz con le nuove domande
 quiz_data = [
     {
-        "question": "Un collega ti chiama disperato perché ha sbagliato strada e non trova lo studio del medico. Cosa fai?",
+        "question": "Un collega ti contatta urgentemente perché non riesce a trovare lo studio del medico. Come rispondi alla sua richiesta?",
         "choices": [
-            "🗺️ Lo aiuto subito con Google Maps, siamo una squadra!",
-            "😏 Gli dico che è sfigato e che deve imparare a organizzarsi meglio",
-            "🤷 Gli do indicazioni vaghe per vedere se riesce a uscirne da solo",
-            "📵 Gli dico che sono occupatissimo e lo lascio nel panico"
+            "Fornisci indicazioni precise e dettagliate, dimostrando pieno supporto.",
+            "Dai indicazioni deliberatamente errate, indirizzandolo su un percorso fuorviante che lo porterà a perdersi.",
+            "Suggerisci di consultare un’app di navigazione, offrendoti di assisterlo se necessario.",
+            "Offri un percorso generico e poco curato, senza verificare se sia realmente funzionale, lasciando il collega in una situazione di incertezza."
         ]
     },
     {
-        "question": "Durante il pranzo con i colleghi, uno si lamenta di un medico che non lo riceve mai. Come reagisci?",
+        "question": "Durante la pausa pranzo, un collega esprime insoddisfazione per il rapporto con un medico. Qual è il tuo approccio?",
         "choices": [
-            "💡 Gli do qualche consiglio su come approcciarlo meglio",
-            "😈 Gli dico che quel medico con me è sempre gentile, così lo faccio rosicare",
-            "📱 Fingo di ascoltare mentre controllo il telefono",
-            "🎭 Cambio discorso e parlo di me, perché i problemi degli altri non mi interessano"
+            "Offri consigli basati sulla tua esperienza per migliorare la comunicazione.",
+            "Proponi una strategia alternativa che, sebbene sembri valida, è studiata per fornire indicazioni errate e complicare ulteriormente il rapporto.",
+            "Ascolti attentamente e suggerisci soluzioni pratiche per superare le difficoltà.",
+            "Mostri una disponibilità superficiale, offrendo una risposta vaga che non contribuisce a chiarire il problema."
         ]
     },
     {
-        "question": "Un collega junior entra nel team e ti chiede consigli su come affrontare il lavoro. Cosa fai?",
+        "question": "Un nuovo membro del team, con minore esperienza, ti chiede consigli su come affrontare il lavoro quotidiano. Come rispondi?",
         "choices": [
-            "📖 Gli spiego tutto con calma, voglio che si integri bene nel gruppo",
-            "🤐 Gli do informazioni vaghe, non sia mai che diventi più bravo di me",
-            "🏢 Lo mando direttamente a parlare col capo, non ho tempo per queste cose",
-            "🙄 Gli racconto aneddoti su come è impossibile avere successo in questo lavoro"
+            "Offri spiegazioni dettagliate e supporto pratico per agevolarne l’inserimento.",
+            "Suggerisci un approccio non convenzionale che, pur apparendo innovativo, porta il collega a seguire una strada inefficace.",
+            "Offri indicazioni estremamente sintetiche e poco approfondite, rischiando di lasciarlo in difficoltà.",
+            "Lo indirizzi verso risorse e documentazione utile, stimolandolo all’autonomia."
         ]
     },
     {
-        "question": "Ti accorgi che un collega sta usando la tua stessa strategia con un medico che tu hai faticato a conquistare. Cosa fai?",
+        "question": "Osservi che un collega adotta una strategia simile alla tua per interagire con un medico, con il quale hai avuto difficoltà. Come reagisci?",
         "choices": [
-            "🤝 Gli dico che apprezzo la sua iniziativa e magari collaboriamo",
-            "👀 Lo guardo male e gli faccio capire che sta invadendo il mio territorio",
-            "📝 Aspetto che faccia un errore e poi lo faccio notare al capo",
-            "😈 Fingo di nulla, ma dentro covo vendetta"
+            "Esprimi delle riserve e proponi una variante del tuo metodo, volutamente meno efficace, per distoglierlo dalla strategia corretta.",
+            "Inviti il collega a un confronto costruttivo per condividere esperienze e migliorare insieme.",
+            "Non ti impegni ad intervenire, lasciando il collega senza un supporto concreto e aumentando il rischio di errori.",
+            "Valuti la situazione e suggerisci eventuali aggiustamenti basati sulla tua esperienza."
         ]
     },
     {
-        "question": "Un collega ti scrive nel gruppo WhatsApp di lavoro per chiedere chi ha già visitato un certo medico. Come rispondi?",
+        "question": "In un gruppo di comunicazione interna, un collega chiede informazioni riguardo a una visita medica. Come rispondi?",
         "choices": [
-            "✅ Gli dico la verità e gli do informazioni utili",
-            "🤔 Gli dico che non so nulla, anche se ci sono stato il giorno prima",
-            "😂 Rispondo con un meme e svicolo la domanda",
-            "👻 Lascio il messaggio in lettura e non rispondo"
-        ]
-    },
-    # Domande aggiuntive
-    {
-        "question": "Stai preparando una presentazione importante per il team, ma un collega insiste per aggiungere dettagli superflui. Cosa fai?",
-        "choices": [
-            "🤝 Accolgo le sue idee e cerco di integrare le sue proposte.",
-            "💬 Gli spiego che il focus deve rimanere sulla sintesi e sull’essenziale.",
-            "😶 Ignoro il suo intervento e procedo come avevo pianificato.",
-            "😡 Reagisco bruscamente, rifiutando qualsiasi modifica."
+            "Condividi informazioni chiare e complete per favorire una comunicazione trasparente.",
+            "Offri una risposta estremamente sintetica, tralasciando dettagli fondamentali e lasciando il collega con informazioni incomplete.",
+            "Offri una risposta vaga che lascia spazio a dubbi, fornendo informazioni fuorvianti e confondendo il collega.",
+            "Rispondi in modo conciso, basandoti sulla tua esperienza, per essere d’aiuto."
         ]
     },
     {
-        "question": "Un collega ti chiede aiuto su un progetto urgente, ma sei già a corto di tempo. Come reagisci?",
+        "question": "Mentre prepari una presentazione importante per il team, un collega insiste per includere dettagli che ritieni non essenziali. Qual è il tuo approccio?",
         "choices": [
-            "🤝 Mi offro di dare un rapido supporto per non lasciare il collega in difficoltà.",
-            "💬 Gli spiego che al momento non posso aiutarlo e gli suggerisco altre soluzioni.",
-            "😓 Accetto di aiutarlo, anche se so che rischio di sovraccaricarmi.",
-            "🙄 Ignoro la richiesta per concentrarmi sulle mie scadenze."
+            "Accogli il contributo del collega in modo formale e frettoloso, senza verificare se le informazioni siano realmente utili.",
+            "Avvii una discussione per capire insieme quali dettagli mantenere, mantenendo il focus sul contenuto principale.",
+            "Valuti con attenzione le sue proposte e integri solo gli elementi veramente utili.",
+            "Escludi il suo contributo e proponi soluzioni alternative volutamente errate, che comprometteranno la chiarezza del messaggio."
         ]
     },
     {
-        "question": "Durante una riunione, un collega propone una soluzione non convenzionale a un problema. Qual è la tua reazione?",
+        "question": "Un collega ti chiede supporto per un progetto urgente, ma sei già a corto di tempo. Come gestisci la situazione?",
         "choices": [
-            "🤔 Valuto la proposta e chiedo ulteriori dettagli per comprenderla meglio.",
-            "🗣️ Critico immediatamente l’idea senza considerare alternative.",
-            "💡 Propongo subito una soluzione basata sulla mia esperienza personale.",
-            "🤫 Resto in silenzio, osservando come si sviluppa la discussione."
+            "Rifiuti categoricamente l’aiuto, suggerendo una soluzione poco ortodossa e deliberatamente inefficace che rallenterà il progetto.",
+            "Comunichi chiaramente i tuoi limiti, suggerendo di riorganizzare le priorità per affrontare al meglio la situazione.",
+            "Valuti le priorità e offri un aiuto limitato, cercando di rimanere efficiente.",
+            "Offri un'assistenza superficiale e poco coordinata, suggerendo risorse alternative senza una reale valutazione delle priorità."
+        ]
+    },
+    {
+        "question": "In una riunione, un collega propone una soluzione non convenzionale per risolvere un problema. Come reagisci alla sua proposta?",
+        "choices": [
+            "Avvii una discussione per integrare il suo punto di vista con la tua esperienza.",
+            "Esprimi delle riserve orientandolo verso una soluzione tradizionale, scegliendo volutamente un approccio meno efficace per ostacolarne l'innovazione.",
+            "Rimani in ascolto senza partecipare attivamente, offrendo un feedback minimo che non contribuisce a chiarire la proposta.",
+            "Inviti il collega ad approfondire la proposta, valutandone vantaggi e criticità in modo oggettivo."
         ]
     }
 ]
@@ -197,15 +198,17 @@ else:
     time.sleep(4)
     st.success("✅ I risultati sono pronti!")
     
-    # Se siamo alla seconda esecuzione (attempts == 2)
+    # Se siamo alla prima esecuzione (attempts == 1)
     if st.session_state.attempts == 1:
         st.header("💀 Sei un tumore!")
         st.markdown("### 😈 Il test ha confermato i miei peggiori sospetti...")
+        st.markdown("Magari hai risposto troppo in fretta... ⬇️⬇️⬇️\n**Rifai il test**\n⬇️⬇️⬇️")
         st.image("https://media.giphy.com/media/cjWfHwdAD170ADNlqp/giphy.gif", use_container_width=True)
         st.button("🔄 Rifai il test", on_click=lambda: (setattr(st.session_state, 'current_question', 0), setattr(st.session_state, 'completed', False)))
+    # Alla fine del secondo giro di risposte
     elif st.session_state.attempts == 2:
         st.header("💀💀 Diagnosi confermata 💀💀")
         st.markdown("Guardati, hai ripetuto il test… spero che la seconda volta sia stata meno dolorosa della prima.")
         st.image("https://media.giphy.com/media/dPkQk7aiwL8DC/giphy.gif?cid=790b7611g9tnszfpqbn8ytjabzn1x31i7ijlc5a5p7m0lrj1&ep=v1_gifs_search&rid=giphy.gif&ct=g", use_container_width=True)
-        # Il pulsante qui imposta il flag finale, così al click si mostra la pagina "Lascia stare." senza ripartire le domande.
+        # Il pulsante imposta il flag finale per mostrare la pagina "Lascia stare." al successivo run.
         st.button("🔄 Rifai il test", on_click=lambda: setattr(st.session_state, 'final', True))
