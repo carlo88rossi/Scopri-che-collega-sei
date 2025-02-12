@@ -200,8 +200,8 @@ else:
     
     # Se siamo alla prima esecuzione (attempts == 1)
     if st.session_state.attempts == 1:
-        st.header("💀 Sei un tumore!")
-        st.markdown("### 😈 Il test ha confermato i miei peggiori sospetti...")
+        st.header("💀 Sei un canchero!")
+        st.markdown("### 😈 Il test ha confermato i miei sospetti...")
         st.markdown("Magari hai risposto troppo in fretta... ⬇️⬇️⬇️\n**Rifai il test**\n⬇️⬇️⬇️")
         st.image("https://media.giphy.com/media/cjWfHwdAD170ADNlqp/giphy.gif", use_container_width=True)
         st.button("🔄 Rifai il test", on_click=lambda: (setattr(st.session_state, 'current_question', 0), setattr(st.session_state, 'completed', False)))
